@@ -1,14 +1,9 @@
 import json
-import math
-import tempfile
-from pathlib import Path
 
-import cv2
 import numpy as np
 
 from .database import connect
 from .face_engine import FaceEngine
-from .paths import CAPTURES_DIR
 
 
 MATCH_THRESHOLDS = {

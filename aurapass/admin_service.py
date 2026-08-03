@@ -1,5 +1,3 @@
-from pathlib import Path
-
 from .database import connect, init_db, table_counts
 from .paths import FACE_IMAGES_DIR
 
@@ -32,4 +30,3 @@ def reset_all_data():
             if path.is_file():
                 path.unlink()
     return table_counts()
-

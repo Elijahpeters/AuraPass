@@ -43,7 +43,7 @@ def main():
         time.sleep(1.8)
         log(f"Serial open on {args.serial_port}")
     except Exception as exc:
-        log(f"ERROR opening {COM_PORT}: {exc}")
+        log(f"ERROR opening {args.serial_port}: {exc}")
         return 1
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
