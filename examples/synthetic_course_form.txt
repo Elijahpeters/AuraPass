@@ -1,0 +1,15 @@
+Matric Number
+STU/2026/0001
+Name
+ALEX MORGAN
+Level
+500
+Semester
+Second
+Faculty
+ENGINEERING
+Department/Programme
+Electrical and Electronics Engineering
+S/NO Course
+1 EEG501 Embedded Systems
+2 EEE503 Power Electronics
