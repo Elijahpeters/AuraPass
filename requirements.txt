@@ -1,0 +1,5 @@
+opencv-python>=4.8,<5
+numpy>=1.24,<3
+Pillow>=10,<12
+pdfplumber>=0.11,<1
+pyserial>=3.5,<4
