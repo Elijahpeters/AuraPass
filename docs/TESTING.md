@@ -10,6 +10,16 @@ python -m pytest -q
 python -m compileall -q aurapass app tools tests
 ```
 
+## Synthetic exam-access demo
+
+With Python 3.10 or later, run the policy demonstration from the repository root:
+
+```powershell
+py -3 tools\synthetic_exam_demo.py
+```
+
+Use `python tools\synthetic_exam_demo.py` if the Windows Python launcher is unavailable. The script needs only the Python standard library. It calls the existing `ExamService` using fictional records and injected synthetic match outcomes in a temporary SQLite database. It prints grant and denial outcomes and the controller command strings, then removes the temporary database. It does not run recognition, access a camera, load models, write to the normal runtime database, or send commands to any hardware bridge.
+
 ## Public suite coverage
 
 The checked-in suite covers:
@@ -23,6 +33,7 @@ The checked-in suite covers:
 - course-ineligibility denial;
 - hall-capacity denial and `F` encoding;
 - unknown-face denial logging;
+- the synthetic exam-access demo's grant, repeat-scan, course-eligibility, hall-capacity, and no-match decisions;
 - cosine similarity;
 - multi-template support;
 - close-runner-up ambiguity rejection;
