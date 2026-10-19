@@ -1,10 +1,73 @@
 # AuraPass
 
+[![GitHub Actions](https://github.com/Elijahpeters/AuraPass/actions/workflows/ci.yml/badge.svg)](https://github.com/Elijahpeters/AuraPass/actions/workflows/ci.yml)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 AuraPass is an offline examination-access prototype that connects course-form enrollment, local face matching, exam eligibility, seat assignment, audit records, and an Arduino/Proteus gate co-simulation.
 
 Built by **Peters Elijah Temidayo, professionally known as Elijah Peters**, as an Electrical & Electronics Engineering project.
 
+Engineering case study: [AuraPass project page](https://peterselijah.name.ng/projects/aurapass).
+
 > **Prototype status:** this repository is an engineering demonstration, not a production biometric security product. It has no liveness detector, institutional backend, encrypted biometric store, or fabricated gate. See [Limitations](#limitations) before evaluating or extending it.
+
+## Try the synthetic exam-access demo
+
+The demo runs AuraPass's existing examination-policy service against fictional student records. It shows a grant, repeat-scan denial, course-registration denial, hall-capacity denial, and no-match denial.
+
+On Windows, install Python 3.10 or later and run this from the repository root in PowerShell or Command Prompt:
+
+```powershell
+py -3 tools\synthetic_exam_demo.py
+```
+
+If the Python launcher is unavailable, use `python tools\synthetic_exam_demo.py`. The demo uses only the Python standard library, writes to a temporary SQLite database, and removes that database on exit. It does not start face recognition, read a camera, load model files, or connect to Arduino, Proteus, serial, or UDP hardware. The identity-match outcomes are injected synthetic inputs; printed controller commands are dry-run text only.
+
+Example output from the demo:
+
+```text
+AuraPass synthetic exam-access demo
+Fictional records and injected policy outcomes only; no biometric analysis is performed.
+One-seat EEG501 session; controller commands are printed and never transmitted.
+
+[1] Registered student, seat available
+Decision: GRANTED
+Reason: Access granted.
+Student: Alex Example (DEMO-001)
+Course: EEG501
+Seat: 1
+Controller dry run: V,DEMO-001,EEG501;O,1
+
+[2] Same student scanned again
+Decision: DENIED
+Reason: Already scanned. Seat 1.
+Student: Alex Example (DEMO-001)
+Course: EEG501
+Seat: 1
+Controller dry run: C
+
+[3] Student not registered for the active course
+Decision: DENIED
+Reason: Student is not registered for today's course.
+Student: Casey Sample (DEMO-002)
+Controller dry run: C
+
+[4] Registered student, hall already full
+Decision: DENIED
+Reason: Hall capacity is full.
+Student: Riley Fiction (DEMO-003)
+Course: EEG501
+Controller dry run: F
+
+[5] No synthetic identity match supplied
+Decision: DENIED
+Reason: No synthetic match was supplied.
+Controller dry run: C
+
+Demo database is temporary and will be removed on exit.
+```
+
+This is a policy-flow demonstration, not a biometric accuracy, liveness, security, or production-readiness evaluation. The test suite and this demo never use real biometric information. See [testing scope](docs/TESTING.md).
 
 ## What is implemented
 
