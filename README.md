@@ -7,7 +7,7 @@ AuraPass is an offline examination-access prototype that links course-form enrol
 
 Built by **Peters Elijah Temidayo, professionally known as Elijah Peters**, as an Electrical & Electronics Engineering project.
 
-[Synthetic demo](#synthetic-demo) · [Installation](#installation) · [Architecture](docs/ARCHITECTURE.md) · [Privacy](docs/SECURITY_AND_PRIVACY.md) · [Contributing](CONTRIBUTING.md) · [v0.1.0 draft notes](docs/releases/v0.1.0.md) · [Engineering case study](https://peterselijah.name.ng/projects/aurapass)
+[Synthetic demo](#synthetic-demo) · [Installation](#installation) · [Architecture](docs/ARCHITECTURE.md) · [Privacy](docs/SECURITY_AND_PRIVACY.md) · [Contributing](CONTRIBUTING.md) · [v0.1.0 release notes](docs/releases/v0.1.0.md) · [Engineering case study](https://peterselijah.name.ng/projects/aurapass)
 
 > **Prototype notice:** AuraPass is an engineering demonstration, not a production biometric security or attendance system. It has no liveness detection, institutional backend, or encrypted biometric database. Recognition thresholds are uncalibrated prototype settings; no accuracy, fairness, or deployment claim is made.
 
@@ -241,7 +241,7 @@ Other limitations include:
 - [Security and privacy](docs/SECURITY_AND_PRIVACY.md)
 - [Testing scope](docs/TESTING.md)
 - [Contributor guidelines](CONTRIBUTING.md)
-- [AuraPass v0.1.0 draft release notes](docs/releases/v0.1.0.md)
+- [AuraPass v0.1.0 release notes](docs/releases/v0.1.0.md)
 - [Engineering case study](https://peterselijah.name.ng/projects/aurapass)
 
 No enrolled face images, captures, databases, embeddings, attendance logs, benchmark datasets, or private evaluation reports are included in the repository.
